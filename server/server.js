@@ -4,7 +4,7 @@ const http = require('http');
 const socketIO = require('socket.io');
 
 const publicPath = path.join(__dirname,'../public');
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 3000;
 var app = express();
 var server = http.createServer(app);
 var io = socketIO(server);
@@ -35,6 +35,6 @@ socket.on('createMessage',(message) => {
     });
 });
 
-server.listen(port,() => {
-    console.log(`server is up on ${port}`);
+server.listen(port, () => {
+    console.log("App is running on port " + port);
 });
